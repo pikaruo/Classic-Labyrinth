@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hole : MonoBehaviour
+public class TestHole : MonoBehaviour
 {
     bool entered = false;
     [SerializeField] GameObject ball;
     [SerializeField] GameObject score;
-    [SerializeField] GameObject panel;
     [SerializeField] AudioSource bolaMasukLubang;
+
+
 
     public bool Entered { get => entered; }
 
@@ -17,7 +18,6 @@ public class Hole : MonoBehaviour
         entered = true;
         ball.SetActive(false);
         score.SetActive(false);
-        panel.SetActive(true);
         bolaMasukLubang.Play();
         Debug.Log("ENTER");
     }

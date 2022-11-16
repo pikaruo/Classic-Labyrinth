@@ -8,20 +8,20 @@ public class MenuManager : MonoBehaviour
     // TODO Slider
     public Slider volumeSlider;
 
-    private void Awake()
-    {
-        // TODO Mute
-        if (SoundsManager.Instance.music.mute == true)
-        {
-            toggle.isOn = false;
-            Debug.Log("Status Music Mute:" + SoundsManager.Instance.music.mute);
-        }
-        else
-        {
-            toggle.isOn = true;
-            Debug.Log("Status Music Mute :" + SoundsManager.Instance.music.mute);
-        }
-    }
+    // private void Awake()
+    // {
+    // TODO Mute
+    //     if (SoundsManager.Instance.music.mute == true)
+    //     {
+    //         toggle.isOn = false;
+    //         Debug.Log("Status Music Mute:" + SoundsManager.Instance.music.mute);
+    //     }
+    //     else
+    //     {
+    //         toggle.isOn = true;
+    //         Debug.Log("Status Music Mute :" + SoundsManager.Instance.music.mute);
+    //     }
+    // }
 
     private void Start()
     {

@@ -5,22 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 2e2abccdefec9a7478c1e6de85054926
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/LoadingProgress.unity
     guid: bf0bd87f4e86a3c4692b7c9ed254e9dc
-  - enabled: 0
-    path: Assets/Scenes/Game Level/Golf/Level1.unity
-    guid: 7a4c2c9d43993eb44a6e8e638028ad43
-  - enabled: 0
-    path: Assets/Scenes/Game Level/Golf/Level2.unity
-    guid: 64ae93ae3e06f7146ad316450307b371
-  - enabled: 0
-    path: Assets/Scenes/Game Level/Golf/Level3.unity
-    guid: 6af2da870b60d1545a1cf2f78ea75cdb
   - enabled: 1
-    path: Assets/Scenes/Game Level/Maze/Maze3D1.unity
+    path: Assets/Scenes/Game Level/Maze3D1.unity
     guid: aa3400bb499db494f987663ebf216dcf
+  - enabled: 1
+    path: Assets/Scenes/Game Level/Maze3D2.unity
+    guid: 2813a9fcb02adc446b64252d1f03ac0b
   m_configObjects: {}

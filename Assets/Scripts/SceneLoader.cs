@@ -34,8 +34,8 @@ public static class SceneLoader
     public static void LoadNextLevel()
     {
         var currentSceneName = SceneManager.GetActiveScene().name;
-        var nextLevel = int.Parse(currentSceneName.Split("Level")[1]) + 1;
-        string nextSceneName = "Level" + nextLevel;
+        var nextLevel = int.Parse(currentSceneName.Split("Maze3D")[1]) + 1;
+        string nextSceneName = "Maze3D" + nextLevel;
 
         if (SceneUtility.GetBuildIndexByScenePath(nextSceneName) == -1)
         {

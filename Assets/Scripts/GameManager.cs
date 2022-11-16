@@ -6,26 +6,27 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] TMP_Text gameOverText;
-    [SerializeField] PlayerController player;
-    [SerializeField] Hole hole;
+    [SerializeField] inventory player;
+    [SerializeField] TMP_Text coinText;
+    [SerializeField] GameObject tutupEnd;
+
 
     private void Start()
     {
         gameOverPanel.SetActive(false);
+        tutupEnd.SetActive(true);
     }
 
-    void Update()
+    private void Update()
     {
+        coinText.text = "Coin : " + player.coin + " / 3";
 
-        if (hole.Entered && gameOverPanel.activeInHierarchy == false)
+
+        if (player.coin >= 3)
         {
-            gameOverPanel.SetActive(true);
-            gameOverText.text = "Finished! Shoot Count: " + player.ShootCount;
+            tutupEnd.SetActive(false);
         }
-
     }
-
 
     public void BackToMainMenu()
     {

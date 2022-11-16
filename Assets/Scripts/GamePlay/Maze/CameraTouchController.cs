@@ -10,7 +10,7 @@ public class CameraTouchController : MonoBehaviour
     [SerializeField, Range(0, 2)] float zoomFactor = 1;
     [Tooltip("equal camera y position")]
     [SerializeField] float minCamPos = 70;
-    [SerializeField] float maxCamPos = 110;
+    [SerializeField] float maxCamPos = 150;
     [SerializeField] Collider topCollider;
     float distance;
 
