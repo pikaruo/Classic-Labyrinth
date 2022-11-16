@@ -13,8 +13,11 @@ EditorBuildSettings:
     guid: bf0bd87f4e86a3c4692b7c9ed254e9dc
   - enabled: 1
     path: Assets/Scenes/Game Level/Maze3D1.unity
-    guid: aa3400bb499db494f987663ebf216dcf
+    guid: 2813a9fcb02adc446b64252d1f03ac0b
   - enabled: 1
     path: Assets/Scenes/Game Level/Maze3D2.unity
-    guid: 2813a9fcb02adc446b64252d1f03ac0b
+    guid: 0211c0fb46922464c86d288d88c601b3
+  - enabled: 1
+    path: Assets/Scenes/Game Level/Maze3D3.unity
+    guid: c743a59c8cc9a864d9d4afcc5eb2ee9e
   m_configObjects: {}

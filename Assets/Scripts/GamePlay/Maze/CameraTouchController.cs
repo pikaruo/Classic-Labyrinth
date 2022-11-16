@@ -32,17 +32,24 @@ public class CameraTouchController : MonoBehaviour
         var touch0 = Input.GetTouch(0);
 
         // simpan posisi awal tapi posisi real world
-        if (touch0.phase == TouchPhase.Began)
-        {
-            touchBeganWorldPos = Camera.main.ScreenToWorldPoint(
-                new Vector3(touch0.position.x, touch0.position.y, distance)
-            );
-            cameraBeganWorldPos = this.transform.position;
-        }
+        // TODO Old Code
+        // if (touch0.phase == TouchPhase.Began)
+        // {
+        //     touchBeganWorldPos = Camera.main.ScreenToWorldPoint(
+        //         new Vector3(touch0.position.x, touch0.position.y, distance)
+        //     );
+        //     cameraBeganWorldPos = this.transform.position;
+        // }
 
         // atur posisi sekarang sesuai perubahan dari posisi began
         if (Input.touchCount == 1 && touch0.phase == TouchPhase.Moved)
         {
+
+            // TODO New Code - posisi pada frame sebelumnya bergerak
+            var touchPrevPos = touch0.position - touch0.deltaPosition;
+            var touchPreWorldPos = Camera.main.ScreenToWorldPoint(
+                new Vector3(touchPrevPos.x, touchPrevPos.y, distance)
+            );
 
             // posisi touch saat ini
             var touchMovedWorldPos = Camera.main.ScreenToWorldPoint(
@@ -50,10 +57,12 @@ public class CameraTouchController : MonoBehaviour
             );
 
             // perbedaan posisi
-            var delta = touchMovedWorldPos - touchBeganWorldPos;
+            // var delta = touchMovedWorldPos - touchBeganWorldPos;
+            var delta = touchMovedWorldPos - touchPreWorldPos;
 
             // menggunakan lerp sebagai filter agar move smooth
-            var targetPos = cameraBeganWorldPos - delta * dragFactor;
+            // var targetPos = cameraBeganWorldPos - delta * dragFactor;
+            var targetPos = this.transform.position - delta * 0.5f;
 
             // clamp targetpos
             targetPos = new Vector3(
@@ -62,11 +71,12 @@ public class CameraTouchController : MonoBehaviour
                 Mathf.Clamp(targetPos.z, topCollider.bounds.min.z, topCollider.bounds.max.z)
             );
 
-            this.transform.position = Vector3.Lerp(
-                this.transform.position,
-                targetPos,
-                Time.deltaTime * filterFactor
-            );
+            // this.transform.position = Vector3.Lerp(
+            //     this.transform.position,
+            //     targetPos,
+            //     Time.deltaTime * filterFactor
+            // );
+            this.transform.position = targetPos;
         }
 
         if (Input.touchCount < 2)
